@@ -14,7 +14,7 @@ import (
 func TestRun(t *testing.T){
 	l, err := net.Listen("tcp", "localhost:0")
 	if err != nil {
-		t.Fatal("failed to listen port %v", err)
+		t.Fatalf("failed to listen port %v", err)
 	}
 	ctx, cancel := context.WithCancel(context.Background())
 	eg, ctx := errgroup.WithContext(ctx)
